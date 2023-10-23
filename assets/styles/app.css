@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'Roboto Slab','Lora', serif;
+}
+ol {
+    list-style-type: decimal-leading-zero;
+}

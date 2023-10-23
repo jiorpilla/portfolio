@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Jan Ivan Orpilla{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&amp;family=Roboto+Mono:wght@100&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title>Jan Ivan Orpilla - Fullstack PHP developer</title>
+    <meta name="description" content="Jan Ivan Orpilla, a Fullstack PHP developer based in the Philippines, with 8 years of professional experience in building modular, maintaible websites. ">
+
+    <meta name="keywords" content="Jan Ivan Orpilla, Ivan Orpilla, Fullstack PHP developer, PHP Developer, Pangasinan, Umingan, Umingan pangasinan, Clsu, Technopian, Portfolio, PHP, CSS, JAVASCRIPT, reactjs, symfony,
+symfony dev, yii2 dev, yii2, codeigniter, mvc, tailwindcss, tailwind, tailwind elements, Philippines, Web developer, Web dev, PHP dev, Laravel, Git, github, Svn, Sourcefit, jiorpilla, CMS, Wordpress">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-064SGW7Q8C"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-064SGW7Q8C');
+</script>
+<body>
+{% block body %}
+
+    {% block sidebar %}{% endblock %}
+
+    {% block contents %}{% endblock %}
+
+{% endblock %}
+
+</body>
+</html>

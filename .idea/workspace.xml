@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93abe302-b9e5-410f-a307-87c762c2e105" name="Changes" comment="" />
+    <list default="true" id="93abe302-b9e5-410f-a307-87c762c2e105" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,7 +219,7 @@
       <workItem from="1697809161866" duration="1191000" />
       <workItem from="1697822282835" duration="24000" />
       <workItem from="1697822382663" duration="31178000" />
-      <workItem from="1698056876006" duration="917000" />
+      <workItem from="1698056876006" duration="2535000" />
     </task>
     <servers />
   </component>
@@ -228,7 +231,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/HomeController.php</url>
-          <line>269</line>
+          <line>290</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

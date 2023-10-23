@@ -17,6 +17,26 @@ class HomeController extends AbstractController
     public function index(): Response
     {
 
+        $new_works = [
+            'portfolio' => [
+                'name' => 'My Portfolio',
+                'url' => 'https://janivanorpilla.com./',
+                'image' => 'screencapture-janivanorpilla-2023-10-23-19_16_40.png',
+                'github_url' => 'https://github.com/jiorpilla/portfolio',
+                'description' => '',
+                'skills' => [
+                    'PHP',
+                    'Symfony 6',
+                    'Tailwind CSS',
+                    'Tailwind Elements',
+                    'Mysql',
+                    'CSS',
+                    'Javascript',
+                    'MailerSend',
+                    'Gmail SMTP',
+                ],
+            ],
+        ];
         $works = array(
             'katron' => [
                 'name' => 'Katron Creative',
@@ -244,6 +264,7 @@ class HomeController extends AbstractController
             ],
         ];
         return $this->render('portfolio/portfolio.html.twig', [
+            'new_works' => $new_works,
             'works_carousel' => $works_carousels,
             'works' => $works,
         ]);

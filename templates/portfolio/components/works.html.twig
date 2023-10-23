@@ -7,6 +7,48 @@
             <!-- Portfolio Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
 
+                {% for portfolio in new_works %}
+                    <!-- Card -->
+                    <div class="block rounded-lg bg-white shadow-2xl dark:bg-neutral-700 text-center">
+                        <!-- Card image -->
+                        <div class="rounded-t-lg h-80 overflow-hidden" data-te-lightbox-init>
+                            <img
+                                    src="{{ asset('/images/' ~ portfolio.image) }}"
+                                    data-te-img="{{ asset('/images/' ~ portfolio.image) }}"
+                                    alt="{{ "Jan Ivan Orpilla Portfolio " ~ portfolio.name }}"
+                                    class="cursor-zoom-in data-[te-lightbox-disabled]:cursor-auto"
+                            />
+                        </div>
+                        <!-- Card header -->
+                        <div class="border-b-2 border-neutral-100 px-6 py-4 dark:border-neutral-500">
+                            <h5 class="flex items-center justify-between dark:text-neutral-300 text-black">
+                                {{ portfolio.name }}
+                                <div class="inline-block">
+                                    {% if portfolio.github_url is defined and portfolio.github_url is not empty %}
+                                        <a href="{{ portfolio.github_url }}" class="mr-2" target="_blank"><i
+                                                    class="fa-brands fa-github text-2xl"></i></a>
+                                    {% endif %}
+                                    <a href="{{ portfolio.url }}" target="_blank"><i
+                                                class="fa-solid fa-arrow-up-right-from-square text-2xl"></i></a>
+                                </div>
+                            </h5>
+                        </div>
+
+                        <!-- Card body -->
+                        <div class="p-6">
+                            <!-- Text -->
+                            <p class="mb-2 text-base text-neutral-500 dark:text-neutral-300">
+                                {{ portfolio.description }}
+                            </p>
+
+                            {% for skill_used in portfolio.skills %}
+                                <div class="font-mono inline-block whitespace-nowrap rounded-full bg-orange-500 px-4 pb-[0.45em] pt-[0.35em] text-center align-baseline text-[0.75em] font-bold leading-none text-white">
+                                    {{ skill_used }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
                 {% for key, portfolio in works_carousel %}
                     <!-- Card -->
                     <div class="block rounded-lg bg-white shadow-2xl dark:bg-neutral-700 text-center">

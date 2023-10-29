@@ -2,7 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
+use App\Form\Type\ContactMeType;
+use App\Form\Type\CaptchaType;
+use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
+use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
+use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3Validator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,7 +46,7 @@ class HomeController extends AbstractController
                 ],
             ],
         ];
-        $works = array(
+        $works = [
             'katron' => [
                 'name' => 'Katron Creative',
                 'url' => 'https://katron.com.au/',
@@ -209,10 +218,8 @@ class HomeController extends AbstractController
                     'Website Deployment',
                 ],
             ],
-        );
-
-        $works_carousels =
-            [
+        ];
+        $works_carousels = [
             'raconteurph' => [
                 'name' => 'RaconteurPH',
                 'url' => 'https://raconteurph.com/',
@@ -263,10 +270,17 @@ class HomeController extends AbstractController
                 ],
             ],
         ];
+
+
+        $contact = new Contact();
+
+        $form = $this->createForm(ContactMeType::class);
+
         return $this->render('portfolio/portfolio.html.twig', [
             'new_works' => $new_works,
             'works_carousel' => $works_carousels,
             'works' => $works,
+            'form' => $form,
         ]);
     }
 
@@ -286,11 +300,19 @@ class HomeController extends AbstractController
     }
 
     #[Route('/mailer', name: "mailer")]
-    public function sendEmail(Request $request, MailerInterface $mailer)
+    public function sendEmail(Request $request, MailerInterface $mailer,Recaptcha3Validator $recaptcha3Validator)
     {
-        $subject = $request->request->get('subject');
-        $email = $request->request->get('email');
-        $message = $request->request->get('message');
+
+//        $score = $recaptcha3Validator->getLastResponse()->getScore();
+//        $form->handleRequest($request);
+//        if ($form->isSubmitted() && $form->isValid()) {
+//        }
+        $contact_me = $request->request->all('contact_me');
+//
+//        dump($contact_me);
+        $subject = $contact_me['subject'];
+        $email = $contact_me['email'];
+        $message = $contact_me['body'];
 
 
         $email = (new Email())
@@ -307,29 +329,17 @@ class HomeController extends AbstractController
         return new RedirectResponse('/#contact_section');
     }
 
-    #[Route('/list-images', name: "list_images")]
+    #[Route('/images_test', name: "list_images")]
     public function listImages()
     {
-        $imageDirectory = $this->getParameter('kernel.project_dir') . '/public/images';
-        $files = scandir($imageDirectory);
 
-        $imageFiles = array_diff($files, ['.', '..']);
+        // creates a task object and initializes some data for this example
+        $contact = new Contact();
 
-        $exportedFiles = var_export($imageFiles, true);
-
-
-
-
-        ob_start();
-
-        echo '<pre>';
-        print_r($website);
-        echo '</pre>';
-
-        $o = ob_get_clean();
-
-        return new Response($o, 200, [
-            'Content-Type' => 'text/html',
+        $captcha = $this->createForm(ContactMeType::class);
+        dump($captcha);
+        return $this->render('portfolio/portfolio.html.twig', [
+            'form' => $captcha,
         ]);
     }
 }

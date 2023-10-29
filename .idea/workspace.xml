@@ -2,8 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93abe302-b9e5-410f-a307-87c762c2e105" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/CaptchaType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/portfolio_s.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/portfolio_s.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/web_profiler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/web_profiler.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/entrypoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/entrypoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/vendors-node_modules_tw-elements_dist_js_chart_es_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/vendors-node_modules_tw-elements_dist_js_chart_es_js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/vendors-node_modules_tw-elements_dist_js_chartjs-plugin-datalabels_es_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/vendors-node_modules_tw-elements_dist_js_chartjs-plugin-datalabels_es_js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/vendors-node_modules_tw-elements_dist_js_tw-elements_es_min_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/vendors-node_modules_tw-elements_dist_js_tw-elements_es_min_js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/portfolio/components/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/portfolio/components/contact.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/portfolio/portfolio.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/portfolio/portfolio.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,9 +188,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/mailer-send-mailer" />
+      <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/karser/karser-recaptcha3-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="2WwlWGE22N9T3T0oHuLGP8CvLJg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -186,6 +210,7 @@
       <recent name="C:\wamp\www\z\portfolio_S\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\z\portfolio_S\src\Form\Type" />
       <recent name="C:\wamp\www\z\portfolio_S\public" />
     </key>
   </component>
@@ -219,20 +244,37 @@
       <workItem from="1697809161866" duration="1191000" />
       <workItem from="1697822282835" duration="24000" />
       <workItem from="1697822382663" duration="31178000" />
-      <workItem from="1698056876006" duration="2535000" />
+      <workItem from="1698056876006" duration="2850000" />
+      <workItem from="1698141546948" duration="1896000" />
+      <workItem from="1698300950021" duration="8500000" />
+      <workItem from="1698402039356" duration="2680000" />
+      <workItem from="1698562781248" duration="8512000" />
+      <workItem from="1698596835970" duration="4709000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/HomeController.php</url>
-          <line>290</line>
-          <option name="timeStamp" value="2" />
+          <line>309</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -240,7 +282,13 @@
       <configuration name="index.php">
         <watch expression="$this-&gt;dispatcher" />
         <watch expression="$this-&gt;rejected" />
+        <watch expression="$request-&gt;request-&gt;get('contact_me')" language="PHP" />
+        <watch expression="$request-&gt;request-&gt;all();" language="PHP" />
+        <watch expression="$request-&gt;request-&gt;all()" />
       </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/Controller/HomeController.php" line="309">
+        <watch expression="$request-&gt;request-&gt;all('contact_me')" />
+      </inline-watch>
     </watches-manager>
   </component>
 </project>

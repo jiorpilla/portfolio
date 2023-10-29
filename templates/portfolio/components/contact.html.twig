@@ -7,79 +7,130 @@
         <div class="w-1/2 p-6">
             <h2 class="text-2xl font-semibold">Contact Me</h2>
 
-            <form class="mt-4" method="post" action="/mailer"
-                  data-te-validation-init
-                  data-te-active-validation="true"
-                  autocomplete="off"
-            >
-                <div class="mb-4">
-                    <!--Large input-->
-                    <div class="relative mb-3"
-                         data-te-input-wrapper-init
-                         data-te-validate="input"
-                         data-te-validation-ruleset="isRequired|isString"
-                         data-te-invalid-feedback="Subject is Required"
-                         data-te-valid-feedback="">
-                        <input
-                                type="text"
-                                name="subject"
-                                id="subject_input"
-                                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:border-orange-500 peer-focus:text-orange-500 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-orange-500 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                placeholder="Subject" />
-                        <label
-                                for="subject_input"
-                                class="active:border-orange-500 pointer-events-none absolute focus:ring-orange-500 left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-orange-500 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-orange-500"
-                        >Subject
-                        </label>
-                    </div>
+            {{ form_start(form, {
+                'data': 'data-te-validation-init',
+                'action': '/mailer',
+                'attr': {
+                    'class':'test',
+                    'data-te-validation-init':true,
+                    'data-te-active-validation':'true',
+                    'autocomplete':'off',
+                }
+            }
+            )}}
+            <div class="mb-4">
+                <!--Large input-->
+                <div class="relative mb-3"
+                     data-te-input-wrapper-init
+                     data-te-validate="input"
+                     data-te-validation-ruleset="isRequired|isString"
+                     data-te-invalid-feedback="Subject is Required"
+                     data-te-valid-feedback="">
+                    {{ form_widget(form.subject) }}
+                    {{ form_label(form.subject) }}
+
                 </div>
-                <div class="mb-4">
-                    <!--Large input-->
-                    <div class="relative mb-3" data-te-input-wrapper-init
-                         data-te-validate="input"
-                         data-te-validation-ruleset="isRequired|isEmail"
-                         data-te-invalid-feedback="Email is Required"
-                         data-te-valid-feedback="">
-                        <input
-                                type="text"
-                                name="email"
-                                id="email_input"
-                                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:border-orange-500 peer-focus:text-orange-500 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-orange-500 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                placeholder="Email" />
-                        <label
-                                for="email_input"
-                                class="active:border-orange-500 pointer-events-none absolute focus:ring-orange-500 left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-orange-500 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-orange-500"
-                        >Your Email
-                        </label>
-                    </div>
+            </div>
+            <div class="mb-4">
+                <!--Large input-->
+                <div class="relative mb-3" data-te-input-wrapper-init
+                     data-te-validate="input"
+                     data-te-validation-ruleset="isRequired|isEmail"
+                     data-te-invalid-feedback="Email is Required"
+                     data-te-valid-feedback="">
+                    {{ form_widget(form.email) }}
+                    {{ form_label(form.email) }}
+
                 </div>
-                <div class="mb-4">
-                    <div class="relative mb-3" data-te-input-wrapper-init
-                         data-te-validate="input"
-                         data-te-validation-ruleset="isRequired"
-                         data-te-invalid-feedback="Message is Required"
-                         data-te-valid-feedback=""
-                    >
-                        <textarea
-                                name="message" id="message_input" class="active:border-orange-500 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                rows="4"
-                                placeholder="Your message"></textarea>
-                        <label
-                                for="message_input"
-                                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-orange-500 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-orange-500"
-                        >Message</label
-                        >
-                    </div>
-                </div>
-                <button
-                        type="submit"
-                        class="inline-block rounded bg-orange-500 px-6 pb-2 pt-2.5 font-mono uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-orange-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-orange-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-orange-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                        data-te-submit-btn-ref
+            </div>
+            <div class="mb-4">
+                <div class="relative mb-3" data-te-input-wrapper-init
+                     data-te-validate="input"
+                     data-te-validation-ruleset="isRequired"
+                     data-te-invalid-feedback="Message is Required"
+                     data-te-valid-feedback=""
                 >
-                    Send
-                    <i class="fa-regular fa-paper-plane"></i>
-                </button>
-            </form>
+                    {{ form_widget(form.body) }}
+                    {{ form_label(form.body) }}
+
+                </div>
+            </div>
+            {{ form_row(form.captcha) }}
+            {{ form_row(form.send) }}
+            {{ form_end(form) }}
+{#            <form class="mt-4" method="post" action="/mailer"#}
+{#                  data-te-validation-init#}
+{#                  data-te-active-validation="true"#}
+{#                  autocomplete="off"#}
+{#            >#}
+{#                <div class="mb-4">#}
+{#                    <!--Large input-->#}
+{#                    <div class="relative mb-3"#}
+{#                         data-te-input-wrapper-init#}
+{#                         data-te-validate="input"#}
+{#                         data-te-validation-ruleset="isRequired|isString"#}
+{#                         data-te-invalid-feedback="Subject is Required"#}
+{#                         data-te-valid-feedback="">#}
+{#                        <input#}
+{#                                type="text"#}
+{#                                name="subject"#}
+{#                                id="subject_input"#}
+{#                                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:border-orange-500 peer-focus:text-orange-500 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-orange-500 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"#}
+{#                                placeholder="Subject" />#}
+{#                        <label#}
+{#                                for="subject_input"#}
+{#                                class="active:border-orange-500 pointer-events-none absolute focus:ring-orange-500 left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-orange-500 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-orange-500"#}
+{#                        >Subject#}
+{#                        </label>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="mb-4">#}
+{#                    <!--Large input-->#}
+{#                    <div class="relative mb-3" data-te-input-wrapper-init#}
+{#                         data-te-validate="input"#}
+{#                         data-te-validation-ruleset="isRequired|isEmail"#}
+{#                         data-te-invalid-feedback="Email is Required"#}
+{#                         data-te-valid-feedback="">#}
+{#                        <input#}
+{#                                type="text"#}
+{#                                name="email"#}
+{#                                id="email_input"#}
+{#                                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:border-orange-500 peer-focus:text-orange-500 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-orange-500 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"#}
+{#                                placeholder="Email" />#}
+{#                        <label#}
+{#                                for="email_input"#}
+{#                                class="active:border-orange-500 pointer-events-none absolute focus:ring-orange-500 left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-orange-500 peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-orange-500"#}
+{#                        >Your Email#}
+{#                        </label>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="mb-4">#}
+{#                    <div class="relative mb-3" data-te-input-wrapper-init#}
+{#                         data-te-validate="input"#}
+{#                         data-te-validation-ruleset="isRequired"#}
+{#                         data-te-invalid-feedback="Message is Required"#}
+{#                         data-te-valid-feedback=""#}
+{#                    >#}
+{#                        <textarea#}
+{#                                name="message" id="message_input" class="active:border-orange-500 peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"#}
+{#                                rows="4"#}
+{#                                placeholder="Your message"></textarea>#}
+{#                        <label#}
+{#                                for="message_input"#}
+{#                                class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-orange-500 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-orange-500"#}
+{#                        >Message</label#}
+{#                        >#}
+{#                    </div>#}
+{#                </div>#}
+{#                <button#}
+{#                        type="submit"#}
+{#                        class="inline-block rounded bg-orange-500 px-6 pb-2 pt-2.5 font-mono uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-orange-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-orange-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-orange-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"#}
+{#                        data-te-submit-btn-ref#}
+{#                >#}
+{#                    Send#}
+{#                    <i class="fa-regular fa-paper-plane"></i>#}
+{#                </button>#}
+{#            </form>#}
         </div>
         <!-- Contact Information -->
         <div class="w-1/2 p-6">
